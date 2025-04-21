@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Smart Chair</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #e0f7fa;
+      padding: 2rem;
+    }
+header {
+      background: #0e6ba8;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+font-size: 30px;
+    }
+
+     header {
+  background: #0e6ba8;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.company-name {
+  font-size: 3rem;
+  margin: 0;
+color: black;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+    .logout-btn {
+      padding: 0.5rem 1rem;
+      background-color: #e53935;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .button-container {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .nav-button {
+      flex: 1 1 150px;
+      padding: 1rem;
+      background: #0e6ba8;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-align: center;
+    }
+    .nav-button:hover {
+      background: #075a96;
+    }
+section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      margin-top: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+  </style>
+</head>
+<body>
+<center>
+  <script>
+    if (sessionStorage.getItem("isLoggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+<header>
+  <div class="header-content">
+    <h1 class="company-name">FemAlign</h1>
+    <p class="tagline">Comfort For Every Curve , Relief For Every Week</p>
+   </div>
+</header>
+
+  <h1>Welcome, <span id="user-name"></span>!</h1>
+  <p>This is your Smart Chair dashboard.</p>
+<section>
+  <h2><a href ="proto.html">Prototype</a></h2>
+</section>
+
+<section>
+  <h2><a href ="customer.html">Customer Profiling</a></h2>
+</section>
+
+<section>
+  <h2><a href ="businessplan.html">Business Plan</a></h2>
+</section>
+<form action="C:\Users\Niharika C\OneDrive\Desktop\C project\cgi-bin\faq.cgi" method="GET">
+  <button type="submit">View FAQs </button>
+</form>
+<a href="http://localhost:8000/cgi-bin/faq.cgi" target="_blank">
+  <button>View FAQs</button>
+</a>
+<form action="http://localhost:8000/cgi-bin/faq.cgi" method="GET">
+  <button type="submit">View FAQs</button>
+</form>
+<a href="http://localhost:8000/cgi-bin/faq.cgi" > click </a>
+
+
+
+  <button class="logout-btn" onclick="logout()">Logout</button>
+  <script>
+    document.getElementById("user-name").textContent = sessionStorage.getItem("username");
+
+    function logout() {
+      sessionStorage.clear();
+      window.location.href = "login.html";
+    }
+  </script>
+</center>
+</body>
+</html>
