@@ -1,53 +1,211 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>PROTOTYPE</title>
-<style>
-h1{color:red;text-align:center}
-h2{color:blue;text-align:center}
-body{text-align:center}
-p{text-align:center;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Chair Prototype | FemAlign</title>
+  <link href="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      background: #0e6ba8;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .header-title {
+      font-size: 2.8rem;
+      margin: 0;
+    }
+
+    section {
+      background: white;
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in;
+    }
+
+    h2 {
+      color: #0e6ba8;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: #fafafa;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .feature-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      color: #0e6ba8;
+    }
+
+    .feature-content {
+      flex-grow: 1;
+    }
+
+    .feature-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+      color: #333;
+    }
+
+    .feature p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .dashboard-link {
+      display: inline-block;
+      margin: 1rem auto;
+      text-align: center;
+      font-size: 1.1rem;
+      text-decoration: none;
+      background-color: #0e6ba8;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .dashboard-link:hover {
+      background-color: #0b4e7a;
+    }
+
+    .icon {
+      width: 28px;
+      height: 28px;
+      margin-top: 4px;
+    }
+.animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(-45deg, #00bcd4, #2196f3, #673ab7, #e91e63);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      z-index: -1;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
 </head>
 <body>
-<h1>PROTOTYPE DEVELOPMENT</h1>
-<h2>FEATURES</h2>
-<p>
-1.Backrest</br>
-</br>
-The backrest of FemAlign is equipped with advanced sensors to monitor posture, stress levels, and hydration.</br> It automatically adjusts its shape to correct poor posture and provides real-time alerts to</br> help maintain user well-being during extended periods of sitting.</br>
-</br>
-2.Heating Pad Feature</br>
-</br>
-The Smart Chair comes with an integrated heating pad located in the compartment beneath the armrest.</br> This heating pad can be easily activated to provide soothing warmth for the user. It is designed to offer relief from</br>
-back pain and muscle stiffness during long hours of sitting.</br> The temperature of the heating pad can be adjusted according to user preference, ensuring comfort throughout the workday.</br> Simply use the chair’s control panel to regulate the heat settings and enjoy personalized warmth.</br>
-</br>
-3.Login System for Employees</br>
-</br>
-Employees can access the Smart Chair using their company ID card. </br>
-This system collects health-related data such as posture, stress levels, and hydration status.</br>
- The data is stored in a secure database, enabling company administrators to analyze individual and overall health trends.<br/>
- Based on this analysis, informed decisions can be made to improve employee wellness and productivity.</br>
-</br>
-4.Leg Rest Feature</br>
-</br>
-The Smart Chair is equipped with an adjustable leg rest to enhance </br> comfort and provide additional support during extended periods of sitting.</br>
- The leg rest can be easily extended or retracted based on the user’s preference,</br> offering a more relaxed sitting posture.</br>
- This feature is especially useful for improving circulation,</br> reducing pressure on the lower body,</br> and providing extra comfort during breaks or while working from home.</br></br> Adjust the leg rest to the optimal position using the control panel for personalized support</br>
-</br>
-5.Control Panel</br>
-</br>
-Located on the armrest, the control panel allows users to</br>
-</br>
-1.Control Leg Rest: Extend or retract with ease.</br>
-2.Manage Heating Pad: Turn on/off and adjust heat levels.</br>
-3.View Health Alerts: Check hydration and stress notifications.</br>
-4.ID Card Access: Automatically loads user profile via company ID.</br>
-5.LED Display: Shows status and alerts clearly.</br>
-.</br>
-</p>
-<img src="proto.jpeg.jpg" height="500"></br>
-<a href = 'dashboard.html'>Dashboard</a>
+<div class="animated-bg">
+  <header>
+    <h1 class="header-title">PROTOTYPE DEVELOPMENT</h1>
+  </header>
+
+  <section>
+    <h2>Key Features</h2>
+
+    <div class="feature">
+      <div class="feature-icon"><i data-lucide="activity" class="icon"></i></div>
+      <div class="feature-content">
+        <div class="feature-title">1. Backrest</div>
+        <p>Equipped with sensors to monitor posture, stress, and hydration. Auto-adjusts shape to improve posture and send wellness alerts.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon"><i data-lucide="flame" class="icon"></i></div>
+      <div class="feature-content">
+        <div class="feature-title">2. Heating Pad Feature</div>
+        <p>Integrated heating pad beneath the armrest provides warmth to relieve back pain. Adjustable temperature for personalized comfort.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon"><i data-lucide="badge-check" class="icon"></i></div>
+      <div class="feature-content">
+        <div class="feature-title">3. Login System for Employees</div>
+        <p>Employees access the chair via ID cards. Health data is securely collected and stored for company-level wellness analytics.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon"><i data-lucide="stretch-horizontal" class="icon"></i></div>
+      <div class="feature-content">
+        <div class="feature-title">4. Leg Rest Feature</div>
+        <p>Adjustable leg rest to reduce lower-body strain and improve circulation. Easily managed via the chair's control panel.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon"><i data-lucide="settings" class="icon"></i></div>
+      <div class="feature-content">
+        <div class="feature-title">5. Control Panel</div>
+        <p>Control panel on armrest manages heating pad, leg rest, alerts, and user profiles with a clear LED display.</p>
+      </div>
+    </div>
+
+    <img src="proto.jpeg.jpg" alt="Smart Chair Prototype">
+
+    <a class="dashboard-link" href="dashboard.html">Go to Dashboard</a>
+  </section>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</div>
 </body>
 </html>

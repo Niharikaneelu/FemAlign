@@ -45,6 +45,13 @@
   </style>
 </head>
 <body>
+<script src="animated_background.js"></script>
+<script>
+  createModule().then((Module) => {
+    // WASM module loaded and background animation applied
+    console.log("WASM module loaded!");
+  });
+</script>
   <div class="form-container">
     <h2>Sign Up</h2>
     <form id="signupForm">

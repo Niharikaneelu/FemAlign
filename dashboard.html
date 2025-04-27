@@ -17,7 +17,6 @@ header {
       text-align: center;
 font-size: 30px;
     }
-
      header {
   background: #0e6ba8;
   color: white;
@@ -75,10 +74,29 @@ section {
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
+ .dashboard-link {
+      display: inline-block;
+      margin: 1rem auto;
+      text-align: center;
+      font-size: 1.1rem;
+      text-decoration: none;
+      background-color: #0e6ba8;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
 
   </style>
 </head>
 <body>
+<script src="animated_background.js"></script>
+<script>
+  createModule().then((Module) => {
+    // WASM module loaded and background animation applied
+    console.log("WASM module loaded!");
+  });
+</script>
 <center>
   <script>
     if (sessionStorage.getItem("isLoggedIn") !== "true") {
@@ -95,29 +113,19 @@ section {
   <h1>Welcome, <span id="user-name"></span>!</h1>
   <p>This is your Smart Chair dashboard.</p>
 <section>
-  <h2><a href ="proto.html">Prototype</a></h2>
+<a class="dashboard-link" href="proto.html">Prototype</a>
 </section>
 
 <section>
-  <h2><a href ="customer.html">Customer Profiling</a></h2>
+<a class="dashboard-link" href="customer.html">Customer Profiling</a>
 </section>
 
 <section>
-  <h2><a href ="businessplan.html">Business Plan</a></h2>
+<a class="dashboard-link" href="businessplan.html">Business Plan</a>
 </section>
-<form action="C:\Users\Niharika C\OneDrive\Desktop\C project\cgi-bin\faq.cgi" method="GET">
-  <button type="submit">View FAQs </button>
-</form>
-<a href="http://localhost:8000/cgi-bin/faq.cgi" target="_blank">
-  <button>View FAQs</button>
-</a>
-<form action="http://localhost:8000/cgi-bin/faq.cgi" method="GET">
-  <button type="submit">View FAQs</button>
-</form>
-<a href="http://localhost:8000/cgi-bin/faq.cgi" > click </a>
-
-
-
+<section>
+<a class="dashboard-link" href="http://localhost:8080/cgi-bin/faq.cgi">View FAQs</a></br>
+</section>
   <button class="logout-btn" onclick="logout()">Logout</button>
   <script>
     document.getElementById("user-name").textContent = sessionStorage.getItem("username");
